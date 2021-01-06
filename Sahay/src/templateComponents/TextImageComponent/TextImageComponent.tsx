@@ -21,7 +21,7 @@ const renderDescriptionTexts = (textsArray: string): ReactElement => {
 
 const TextImageComponent = ({
   data,
-  theme,
+  themeColor,
 }: ITextIntroCompProps): ReactElement => {
   const componentState = {
     questionIdentifier: 'quid1',
@@ -54,7 +54,7 @@ const TextImageComponent = ({
           accessibilityLiveRegion="polite"
           accessibilityRole="button">
           <FAB
-            color={theme.MAIN_COLOR}
+            color={themeColor.MAIN_COLOR}
             onPress={() => {
               const nextGoto =
                 data[currentComponentState.questionIdentifier].goto;

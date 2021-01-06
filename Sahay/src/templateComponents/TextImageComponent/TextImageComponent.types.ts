@@ -16,5 +16,5 @@ export interface IBarrierTextIntroData {
 
 export interface ITextIntroCompProps {
   data: IBarrierTextIntroData;
-  theme: ITheme;
+  themeColor: ITheme;
 }
