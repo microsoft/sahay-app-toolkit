@@ -16,7 +16,9 @@ The Text Image Component takes in the content for the particular screen like som
         
 
 
-    example:
+
+example:
+
 ```
 quid1: {
     descriptionTexts: `<p>Hello There.</p><p>This is a sample Text Image Component</p>` ,
@@ -30,6 +32,12 @@ quid1: {
 ### Component Type
 
 Relay Type Component
+
+
+### Libraries Used
+
+`react-native-htmlview` for parsing text provided as html content.
+`react-native-router-flux` used in Next Button for Navigation to a different Component
 
 ### How to use it?
 
