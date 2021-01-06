@@ -3,8 +3,8 @@ import {
   relativeFontSize,
   relativeHeight,
   relativeWidth,
-} from '../../constants';
-import {Colors} from '../../constants';
+} from '../../../constants';
+import {Colors} from '../../../constants';
 
 const styles = StyleSheet.create({
   nextButton: {
