@@ -15,12 +15,17 @@ module.exports = {
         allowTypedFunctionExpressions: true,
       },
     ],
-    "@typescript-eslint/interface-name-prefix": [
-      "error",
+    '@typescript-eslint/naming-convention': [
+      'error',
       {
-          "prefixWithI": "always"
-      }
-  ],
+        selector: 'interface',
+        format: ['PascalCase'],
+        custom: {
+          regex: '^I[A-Z]',
+          match: true,
+        },
+      },
+    ],
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-explicit-any': 2,

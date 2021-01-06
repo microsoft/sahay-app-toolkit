@@ -6,8 +6,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "prettier:write": "prettier --write **/*.{js,jsx,ts,tsx,json}",
+    "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./ --quiet --fix"
   },
   "dependencies": {
     "native-base": "^2.15.0",

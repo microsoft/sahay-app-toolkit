@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { Colors, Fonts, lineHeight, relativeFontSize } from '../../../constants';
+import {Colors, Fonts, lineHeight, relativeFontSize} from '../../../constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: lineHeight(22),
     marginBottom: 3,
-    marginTop: 3
+    marginTop: 3,
   },
   introImageView: {
     aspectRatio: 7 / 8,

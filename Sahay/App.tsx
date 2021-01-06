@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, ReactNode} from 'react';
 import {Text, StyleSheet} from 'react-native';
 
 interface IProps {}
@@ -8,7 +8,7 @@ export default class App extends Component<IProps> {
     super(props);
   }
 
-  public render() {
+  public render(): ReactNode {
     return (
       <Text style={styles.baseText}>
         <Text style={styles.titleText}>
