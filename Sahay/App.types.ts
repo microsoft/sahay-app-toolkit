@@ -1,7 +1,7 @@
-import { NavigationScenes } from "./src/AppNavigator/AppNavigator.types";
+import {NavigationScenes} from './src/AppNavigator/AppNavigator.types';
 
 export interface IFlatListCompData {
-    componentName : string;
-    goto : NavigationScenes
-    // Add gotoProps later
+  componentName: string;
+  goto: NavigationScenes;
+  // Add gotoProps later
 }
