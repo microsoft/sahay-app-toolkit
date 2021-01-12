@@ -15,7 +15,7 @@ export default class App extends Component<IProps> {
     const componentData: Array<IFlatListCompData> = [
       {
         componentName: 'Text Image Component',
-        goto: NavigationScenes.HOME,
+        goto: NavigationScenes.SAHAY_TEXT_IMAGE_COMPONENT,
       },
     ];
     return (
