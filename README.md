@@ -1,5 +1,64 @@
 
-# Contributing
+Sahay FrameWork
+-------------------------------------
+
+
+A react-native framework that provides a suite of UI Components that can help you setup any content related application.
+
+### Libraries Used
+
+All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under *MIT License* and *GNU General Public License*.
+For a complete updated list of libraries being used, check [package.json](Sahay/package.json)
+
+
+### How to build your own App ?
+
+```
+git clone https://github.com/microsoft/sahay-app-toolkit.git
+cd Sahay
+npm install
+```
+
+Next if you want to create your own component of type say multichoice component
+
+```
+export const customMultiChoice = () : ReactElement => {
+
+return(
+<SahayFrameWork data={yourContent} themeColor={yourPreferedColor} type={componentTypes.MULTI_CHOICE_COMPONENT}/>
+)
+
+}
+```
+
+If you want this to be under your Navigation, simply click on [AppNavigator](Sahay/src/AppNavigator) and add the corresponding scene
+
+
+```
+
+
+ <Scene
+          key={NavigationScenes.YOUR_MULTICHOICE_COMPONENT}
+          component={SahayFramework}
+          title="Your Component Name"
+        />
+
+```
+
+and add this in your [AppNavigator.types](Sahay/src/AppNavigator/AppNavigator.types.ts)
+
+```
+
+export enum NavigationScenes {
+ YOUR_MULTICHOICE_COMPONENT = 'MultiChoiceComponentName'
+}
+
+
+```
+
+
+
+### Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
