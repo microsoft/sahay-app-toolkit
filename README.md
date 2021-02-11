@@ -23,10 +23,10 @@ Next if you want to create your own component of type say multichoice component
 
 ```
 export const customMultiChoice = () : ReactElement => {
-
-return(
-<SahayFrameWork data={yourContent} themeColor={yourPreferedColor} type={componentTypes.MULTI_CHOICE_COMPONENT}/>
-)
+    
+    return(
+        <SahayFrameWork data={yourContent} themeColor={yourPreferedColor} type={componentTypes.MULTI_CHOICE_COMPONENT}/>
+        )
 
 }
 ```
@@ -37,11 +37,11 @@ If you want this to be under your Navigation, simply click on [AppNavigator](Sah
 ```
 
 
- <Scene
-          key={NavigationScenes.YOUR_MULTICHOICE_COMPONENT}
-          component={SahayFramework}
-          title="Your Component Name"
-        />
+  <Scene
+    key={NavigationScenes.YOUR_MULTICHOICE_COMPONENT}
+    component={SahayFramework}
+    title="Your Component Name"
+    />
 
 ```
 
