@@ -11,7 +11,17 @@ export const AppNavigator = (): ReactElement => {
         <Scene
           key={NavigationScenes.SAHAY_TEXT_IMAGE_COMPONENT}
           component={SahayFramework}
-          title="Privacy"
+          title="Sahay Text Image Component"
+        />
+        <Scene
+          key={NavigationScenes.SAHAY_MULTI_CHOICE_COMPONENT}
+          component={SahayFramework}
+          title="Sahay Multi Choice Component"
+        />
+        <Scene
+          key={NavigationScenes.SAHAY_POLAR_QUESTION_COMPONENT}
+          component={SahayFramework}
+          title="Sahay Multi Choice Component"
         />
       </Stack>
     </Router>
