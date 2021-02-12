@@ -3,9 +3,9 @@
 A react-native framework that provides a suite of UI Components that can help you setup any content related application.
 
 <p float="left">
-  <img src="/Screenshots/Text_Intro_Component.png" width="220" />
-  <img src="/Screenshots/Numbered_List.png" width="220" />
-  <img src="/Screenshots/Polar_Question_Component.png" width="220" /> 
+  <img src="/Screenshots/Text_Intro_Component.png" width="250" />
+  <img src="/Screenshots/Numbered_List.png" width="250" />
+  <img src="/Screenshots/Polar_Question_Component.png" width="250" /> 
 </p>
 
 *A sample application for enabling users with English speaking skills using the Sahyak app framework*
