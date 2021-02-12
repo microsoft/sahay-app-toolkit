@@ -16,7 +16,12 @@ export default class App extends Component<IProps> {
       {
         componentName: 'Text Image Component',
         goto: NavigationScenes.SAHAY_TEXT_IMAGE_COMPONENT,
+        
       },
+      {
+        componentName : 'Polar Type Question Component',
+        goto : NavigationScenes.SAHAY_POLAR_QUESTION_COMPONENT
+      }
     ];
     return (
       <FlatList
