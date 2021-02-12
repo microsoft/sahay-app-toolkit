@@ -1,15 +1,17 @@
-
-Sahay FrameWork
--------------------------------------
-
+## Sahay FrameWork
 
 A react-native framework that provides a suite of UI Components that can help you setup any content related application.
 
+<p float="left">
+  <img src="/Screenshots/Text_Intro_Component.png" width="300" />
+  <img src="/Screenshots/Numbered_List.png" width="300" />
+  <img src="/Screenshots/Polar_Question_Component.png" width="300" /> 
+</p>
+
 ### Libraries Used
 
-All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under *MIT License* and *GNU General Public License*.
+All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_ and _GNU General Public License_.
 For a complete updated list of libraries being used, check [package.json](Sahay/package.json)
-
 
 ### How to build your own App ?
 
@@ -23,7 +25,7 @@ Next if you want to create your own component of type say multichoice component
 
 ```
 export const customMultiChoice = () : ReactElement => {
-    
+
     return(
         <SahayFrameWork data={yourContent} themeColor={yourPreferedColor} type={componentTypes.MULTI_CHOICE_COMPONENT}/>
         )
@@ -32,7 +34,6 @@ export const customMultiChoice = () : ReactElement => {
 ```
 
 If you want this to be under your Navigation, simply click on [AppNavigator](Sahay/src/AppNavigator) and add the corresponding scene
-
 
 ```
 
@@ -56,11 +57,9 @@ export enum NavigationScenes {
 
 ```
 
-
-
 ### Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
