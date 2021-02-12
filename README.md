@@ -1,4 +1,4 @@
-## Sahay FrameWork
+## Sahay App Toolkit
 
 A react-native framework that provides a suite of UI Components that can help you setup any content related application.
 
@@ -10,10 +10,6 @@ A react-native framework that provides a suite of UI Components that can help yo
 
 *A sample application for enabling users with English speaking skills using the Sahay app framework*
 
-### Libraries Used
-
-All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_ and _GNU General Public License_.
-For a complete updated list of libraries being used, check [package.json](Sahay/package.json)
 
 ### How to build your own App ?
 
@@ -58,6 +54,11 @@ export enum NavigationScenes {
 
 
 ```
+
+### Dependencies
+
+All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_ and _GNU General Public License_.
+For a complete updated list of libraries being used, check [package.json](Sahay/package.json)
 
 ### Contributing
 
