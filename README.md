@@ -8,7 +8,7 @@ A react-native framework that provides a suite of UI Components that can help yo
   <img src="/Screenshots/Polar_Question_Component.png" width="250" /> 
 </p>
 
-*A sample application for enabling users with English speaking skills using the Sahyak app framework*
+*A sample application for enabling users with English speaking skills using the Sahay app framework*
 
 ### Libraries Used
 
