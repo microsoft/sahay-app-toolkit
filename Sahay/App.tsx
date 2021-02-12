@@ -2,7 +2,10 @@ import React, {Component, ReactNode} from 'react';
 import {Text, StyleSheet, View, FlatList, TouchableOpacity} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import {IFlatListCompData} from './App.types';
+import {Themes} from './constants/Themes';
 import {NavigationScenes} from './src/AppNavigator/AppNavigator.types';
+import {exampleTextImgData} from './src/content-examples/englishSpeakingTutorial/TextIntroData/data';
+import {ComponentType} from './src/SahayFramework/SahayFramework.types';
 
 interface IProps {}
 
@@ -16,12 +19,16 @@ export default class App extends Component<IProps> {
       {
         componentName: 'Text Image Component',
         goto: NavigationScenes.SAHAY_TEXT_IMAGE_COMPONENT,
-        
+        gotoProps: {
+          content: exampleTextImgData,
+          componentType: ComponentType.TEXT_IMAGE_COMPONENT,
+          themeColor: Themes.ORANGE_THEME,
+        },
       },
       {
-        componentName : 'Polar Type Question Component',
-        goto : NavigationScenes.SAHAY_POLAR_QUESTION_COMPONENT
-      }
+        componentName: 'Polar Type Question Component',
+        goto: NavigationScenes.SAHAY_POLAR_QUESTION_COMPONENT,
+      },
     ];
     return (
       <FlatList

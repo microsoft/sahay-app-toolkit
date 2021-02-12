@@ -1,9 +1,9 @@
 import {Colors} from './Colors';
 
 export enum ThemeTypes {
-  SELF_DISCOVERY = 'SELF_DISCOVERY',
-  BREAKING_BARRIERS = 'BREAKING_BARRIERS',
-  COPING_WITH_CRISIS = 'COPING_WITH_CRISIS',
+  ORANGE_THEME = 'ORANGE_THEME',
+  BLUE_THEME = 'BLUE_THEME',
+  MAGENTA_THEME = 'MAGENTA_THEME',
 }
 
 export interface ITheme {
@@ -11,18 +11,18 @@ export interface ITheme {
 }
 
 export type IThemes<ThemeTypes extends string> = {
-  [key in ThemeTypes]?: ITheme;
+  [key in ThemeTypes]: ITheme;
 };
 
 export const Themes: IThemes<ThemeTypes> = {
-  [ThemeTypes.SELF_DISCOVERY]: {
+  [ThemeTypes.ORANGE_THEME]: {
     MAIN_COLOR: Colors.SUNSHADE,
   },
-  [ThemeTypes.BREAKING_BARRIERS]: {
+  [ThemeTypes.BLUE_THEME]: {
     MAIN_COLOR: Colors.SUMMER_SKY,
   },
 
-  [ThemeTypes.COPING_WITH_CRISIS]: {
+  [ThemeTypes.MAGENTA_THEME]: {
     MAIN_COLOR: Colors.PINK_CRISIS,
   },
 };

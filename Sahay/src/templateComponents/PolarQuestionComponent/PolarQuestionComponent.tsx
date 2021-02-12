@@ -5,8 +5,8 @@ import {styles} from './PolarQuestionComponent.styles';
 import {IPolarQuestionComponentProps} from './PolarQuestionComponent.types';
 
 const PolarQuestionComponent = ({
-data,
-themeColor
+  data,
+  themeColor,
 }: IPolarQuestionComponentProps): ReactElement => {
   const componentState = {
     questionIdentifier: 'quid1',
@@ -37,7 +37,10 @@ themeColor
           </TouchableNativeFeedback>
           <TouchableNativeFeedback onPress={() => onPressYes()}>
             <View
-              style={[styles.buttonView, {backgroundColor: themeColor.MAIN_COLOR}]}>
+              style={[
+                styles.buttonView,
+                {backgroundColor: themeColor.MAIN_COLOR},
+              ]}>
               <Text style={[styles.buttonText, {color: Colors.WHITE}]}>
                 Yes
               </Text>

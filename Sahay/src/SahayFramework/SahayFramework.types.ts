@@ -1,11 +1,10 @@
 import {ITheme} from '../../constants/Themes';
 import {
   IPolarQuestionArray,
-  IPolarQuestionMetaData,
 } from '../templateComponents/PolarQuestionComponent/PolarQuestionComponent.types';
-import {IBarrierTextIntroData} from '../templateComponents/TextImageComponent/TextImageComponent.types';
+import {ITextImageDataArray} from '../templateComponents/TextImageComponent/TextImageComponent.types';
 
-export type IContentInterface = IBarrierTextIntroData & IPolarQuestionArray;
+export type IContentInterface = ITextImageDataArray | IPolarQuestionArray;
 
 export enum ComponentType {
   TEXT_IMAGE_COMPONENT = 'TEXT_IMAGE_COMPONENT',
