@@ -1,0 +1,1 @@
+export {VignetteComponent} from './VignetteComponent';

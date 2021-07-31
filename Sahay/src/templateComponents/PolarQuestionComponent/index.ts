@@ -1,0 +1,1 @@
+export {PolarQuestionComponent} from './PolarQuestionComponent';
