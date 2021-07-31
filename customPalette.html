@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="An example of having the user customize a Palette by adding copies of Diagram nodes to the Palette&#39;s Model."
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>Sahay Interactive Framework</title>
+  </head>
+
+  <body>
+    <!-- This top nav is not part of the sample code -->
+
+    <div
+      class="
+        md:flex
+        flex-col
+        md:flex-row md:min-h-screen
+        w-full
+        max-w-screen-xl
+        mx-auto
+      "
+    >
+      <!-- * * * * * * * * * * * * * -->
+      <!-- Start of GoJS sample code -->
+
+      <script src="./src/go.js"></script>
+      <div class="p-4 w-full">
+        <script src="./extensions/Figures.js"></script>
+        <link rel="stylesheet" href="./extensions/DataInspector.css" />
+        <script src="./extensions/DataInspector.js"></script>
+        <script id="code">
+          function init() {
+            var $ = go.GraphObject.make;
+
+            // initialize main Diagram
+            myDiagram = $(go.Diagram, "myDiagramDiv", {
+              "undoManager.isEnabled": true,
+            });
+
+            myDiagram.nodeTemplate = $(
+              go.Node,
+              "Auto",
+              { locationSpot: go.Spot.Center },
+              new go.Binding("location", "location", go.Point.parse).makeTwoWay(
+                go.Point.stringify
+              ),
+              $(
+                go.Shape,
+                "Circle",
+                {
+                  fill: "white",
+                  stroke: "gray",
+                  strokeWidth: 2,
+                  portId: "",
+                  fromLinkable: true,
+                  toLinkable: true,
+                  fromLinkableDuplicates: true,
+                  toLinkableDuplicates: true,
+                  fromLinkableSelfNode: true,
+                  toLinkableSelfNode: true,
+                },
+                new go.Binding("stroke", "color"),
+                new go.Binding("figure")
+              ),
+              $(
+                go.TextBlock,
+                {
+                  margin: new go.Margin(5, 5, 3, 5),
+                  font: "10pt sans-serif",
+                  minSize: new go.Size(16, 16),
+                  maxSize: new go.Size(120, NaN),
+                  textAlign: "center",
+                  editable: true,
+                },
+                new go.Binding("text").makeTwoWay()
+              )
+            );
+
+            // initialize Palette
+            myPalette = $(go.Palette, "myPaletteDiv", {
+              nodeTemplate: myDiagram.nodeTemplate,
+              contentAlignment: go.Spot.Center,
+              layout: $(go.GridLayout, {
+                wrappingColumn: 1,
+                cellSize: new go.Size(2, 2),
+              }),
+              ModelChanged: function (e) {
+                // just for demonstration purposes,
+                if (e.isTransactionFinished) {
+                  // show the model data in the page's TextArea
+                  document.getElementById("mySavedPaletteModel").textContent =
+                    e.model.toJson();
+                }
+              },
+            });
+
+            // now add the initial contents of the Palette
+            myPalette.model.nodeDataArray = [
+              {
+                text: "Start",
+                color: "green",
+                figure: "Circle",
+                category: "Start",
+              },
+              { text: "End", color: "red", figure: "Circle", category: "End" },
+              {
+                text: "Vignette",
+                color: "blue",
+                figure: "Circle",
+                category: "Component",
+              },
+              {
+                text: "TextImage",
+                color: "purple",
+                figure: "Square",
+                category: "Component",
+              },
+              {
+                text: "Data",
+                color: "orange",
+                figure: "Ellipse",
+                category: "Data",
+              },
+              {
+                text: "MultiChoice",
+                color: "red",
+                figure: "Rectangle",
+                category: "Component",
+              },
+              {
+                text: "PolarType",
+                color: "green",
+                figure: "RoundedRectangle",
+                category: "Component",
+              },
+              {
+                text: "SingleChoice",
+                color: "purple",
+                figure: "Triangle",
+                category: "Component",
+              },
+            ];
+
+            // initialize Overview
+            myOverview = $(go.Overview, "myOverviewDiv", {
+              observed: myDiagram,
+              contentAlignment: go.Spot.Center,
+            });
+
+            var inspector = new Inspector("myInspectorDiv", myDiagram, {
+              // uncomment this line to only inspect the named properties below instead of all properties on each object:
+              // includesOwnProperties: false,
+              properties: {
+                text: {},
+                // key would be automatically added for nodes, but we want to declare it read-only also:
+                key: { readOnly: true, show: Inspector.showIfPresent },
+                // color would be automatically added for nodes, but we want to declare it a color also:
+                color: { type: "color" },
+                figure: {},
+                category: {},
+              },
+            });
+
+            load();
+          }
+
+          // Show the diagram's model in JSON format
+          function save() {
+            document.getElementById("mySavedModel").value =
+              myDiagram.model.toJson();
+
+            var dataJSON = JSON.stringify(myDiagram.model.toJson());
+            var blob = new Blob([dataJSON], {
+              type: "text/plain;charset=utf-8",
+            });
+            saveAs(blob, "contents.json");
+
+            myDiagram.isModified = false;
+          }
+          function load() {
+            myDiagram.model = go.Model.fromJson(
+              document.getElementById("mySavedModel").value
+            );
+          }
+
+          function addToPalette() {
+            var node = myDiagram.selection
+              .filter(function (p) {
+                return p instanceof go.Node;
+              })
+              .first();
+            if (node !== null) {
+              myPalette.startTransaction();
+              var item = myPalette.model.copyNodeData(node.data);
+              myPalette.model.addNodeData(item);
+              myPalette.commitTransaction("added item to palette");
+            }
+          }
+
+          // The user cannot delete selected nodes in the Palette with the Delete key or Control-X,
+          // but they can if they do so programmatically.
+          function removeFromPalette() {
+            myPalette.commandHandler.deleteSelection();
+          }
+          window.addEventListener("DOMContentLoaded", init);
+        </script>
+
+        <div id="sample">
+          <div style="width: 100%; white-space: nowrap">
+            <span
+              style="
+                display: inline-block;
+                vertical-align: top;
+                padding: 2px;
+                width: 140px;
+              "
+            >
+              <div
+                id="myPaletteDiv"
+                style="
+                  background-color: whitesmoke;
+                  border: solid 1px black;
+                  height: 400px;
+                "
+              ></div>
+              <div
+                id="myOverviewDiv"
+                style="border: solid 1px black; height: 100px"
+              ></div>
+            </span>
+            <span
+              style="
+                display: inline-block;
+                vertical-align: top;
+                padding: 2px;
+                width: 500px;
+              "
+            >
+              <div
+                id="myDiagramDiv"
+                style="border: solid 1px black; height: 500px"
+              ></div>
+            </span>
+            <span
+              style="
+                display: inline-block;
+                vertical-align: top;
+                padding: 2px;
+                width: 200px;
+              "
+            >
+              <div id="myInspectorDiv" class="inspector"></div>
+            </span>
+          </div>
+          <div>
+            <button onclick="addToPalette()">Add To Palette</button>
+            <button onclick="removeFromPalette()">Delete From Palette</button>
+            Palette model:
+          </div>
+          <textarea
+            id="mySavedPaletteModel"
+            style="width: 100%; height: 200px"
+          ></textarea>
+          <div>
+            <button id="loadModel" onclick="load()">Load</button>
+            <button id="saveModel" onclick="save()">Save</button>
+            Diagram model:
+          </div>
+          <textarea id="mySavedModel" style="width: 100%; height: 200px">
+{ "class": "GraphLinksModel",
+  "nodeDataArray": [
+{"key":1,"text":"Vignette1","figure":"Circle","color":"green","location":"0 0", "category":"Component"},
+{"key":2,"text":"MC1","figure":"Rectangle","color":"red","location":"170 -4", "category":"Component"},
+{"text":"V1/quid1","color":"orange","figure":"Ellipse","key":-3,"location":"-47.84375 93", "descriptionText": "Here is a story about Rahul..... How well do you relate to him?", "sliderOptions": "Somewhat, Okayish, Extremely Well", "category": "Data"},
+{"text":"V1/quid2","color":"orange","figure":"Ellipse","key":-4,"location":"60.15625 93",  "descriptionText": "Here is a story about Arjun..... How well do you relate to him?", "sliderOptions": "Somewhat, Okayish, Extremely Well","category":"Data"},
+{"text":"MC1/quid1","color":"orange","figure":"Ellipse","key":-5,"location":"186.15625 66", "descriptionText": "How do you feel today?", "options": "Feeling distressed, Feeling anxious","category":"Data"}
+],
+  "linkDataArray": [
+{"from":1,"to":2},
+{"from":1,"to":-3},
+{"from":-3,"to":-4},
+{"from":-4,"to":1},
+{"from":2,"to":-5},
+{"from":-5,"to":2}
+]}
+  </textarea
+          >
+        </div>
+      </div>
+      <!-- * * * * * * * * * * * * * -->
+      <!--  End of GoJS sample code  -->
+    </div>
+  </body>
+</html>
