@@ -2,7 +2,6 @@
 
 
 ## [Sahay Interactive Framework](microsoft.github.io/sahay-app-toolkit/customPalette.html)
-### How to build your own App ?
 
 
 ### Contributing
