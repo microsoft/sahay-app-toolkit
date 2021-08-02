@@ -1,1 +1,0 @@
-export {SingleChoiceComponent} from './SingleChoiceComponent';
