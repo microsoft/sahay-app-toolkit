@@ -1,66 +1,9 @@
-## Sahay App Toolkit
-
-A react-native framework that provides a suite of UI Components that can help you setup any content related application.
-
-<p float="left">
-  <img src="/Screenshots/Text_Intro_Component.png" width="220" />
-  <img src="/Screenshots/Numbered_List.png" width="220" />
-  <img src="/Screenshots/Polar_Question_Component.png" width="220" /> 
-</p>
-
-*A sample application for enabling users with English speaking skills using the Sahay app framework*
 
 
-#### Please check [prateekiiest/sahay](https://github.com/prateekiiest/sahay-app-toolkit) for updated version
 
+## [Sahay Interactive Framework](microsoft.github.io/sahay-app-toolkit/customPalette.html)
 ### How to build your own App ?
 
-```
-git clone https://github.com/microsoft/sahay-app-toolkit.git
-cd Sahay
-npm install
-```
-
-Next if you want to create your own component of type say multichoice component
-
-```
-export const customMultiChoice = () : ReactElement => {
-
-    return(
-        <SahayFrameWork data={yourContent} themeColor={yourPreferedColor} type={componentTypes.MULTI_CHOICE_COMPONENT}/>
-        )
-
-}
-```
-
-If you want this to be under your Navigation, simply click on [AppNavigator](Sahay/src/AppNavigator) and add the corresponding scene
-
-```
-
-
-  <Scene
-    key={NavigationScenes.YOUR_MULTICHOICE_COMPONENT}
-    component={SahayFramework}
-    title="Your Component Name"
-    />
-
-```
-
-and add this in your [AppNavigator.types](Sahay/src/AppNavigator/AppNavigator.types.ts)
-
-```
-
-export enum NavigationScenes {
- YOUR_MULTICHOICE_COMPONENT = 'MultiChoiceComponentName'
-}
-
-
-```
-
-### Dependencies
-
-All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_ and _GNU General Public License_.
-For a complete updated list of libraries being used, check [package.json](Sahay/package.json)
 
 ### Contributing
 
