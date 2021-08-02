@@ -11,7 +11,8 @@ A react-native framework that provides a suite of UI Components that can help yo
 *A sample application for enabling users with English speaking skills using the Sahay app framework*
 
 
-#### Please check [prateekiiest/sahay](https://github.com/prateekiiest/sahay-app-toolkit) for updated version
+### [Sahay visualization Framework](microsoft.github.io/sahay-app-toolkit/customPalette.html)
+
 
 ### How to build your own App ?
 
@@ -59,7 +60,7 @@ export enum NavigationScenes {
 
 ### Dependencies
 
-All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_ and _GNU General Public License_.
+All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_.
 For a complete updated list of libraries being used, check [package.json](Sahay/package.json)
 
 ### Contributing
