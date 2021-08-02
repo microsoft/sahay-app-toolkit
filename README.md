@@ -1,7 +1,7 @@
 
 
 
-## [Sahay Interactive Framework](microsoft.github.io/sahay-app-toolkit/customPalette.html)
+## [Sahay Interactive Framework](https://microsoft.github.io/sahay-app-toolkit/customPalette.html)
 
 
 ### Contributing
