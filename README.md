@@ -59,7 +59,7 @@ export enum NavigationScenes {
 
 ### Dependencies
 
-All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_ and _GNU General Public License_.
+All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_.
 For a complete updated list of libraries being used, check [package.json](Sahay/package.json)
 
 ### Contributing
