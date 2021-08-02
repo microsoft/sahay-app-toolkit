@@ -1,37 +1,78 @@
-## Welcome to GitHub Pages
+## Sahay App Toolkit
 
-You can use the [editor on GitHub](https://github.com/prateekiiest/sahay-app-toolkit/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A react-native framework that provides a suite of UI Components that can help you setup any content related application.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<p float="left">
+  <img src="https://raw.githubusercontent.com/microsoft/sahay-app-toolkit/main/Screenshots/Text_Intro_Component.png" width="220" />
+  <img src="https://raw.githubusercontent.com/microsoft/sahay-app-toolkit/main/Screenshots/Numbered_List.png" width="220" />
+  <img src="https://raw.githubusercontent.com/microsoft/sahay-app-toolkit/main/Screenshots/Polar_Question_Component.png" width="220" /> 
+</p>
 
-### Markdown
+*A sample application for enabling users with English speaking skills using the Sahay app framework*
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+### [Sahay visualization Framework](https://microsoft.github.io/sahay-app-toolkit/customPalette.html)
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+### How to build your own App ?
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+git clone https://github.com/microsoft/sahay-app-toolkit.git
+cd Sahay
+npm install
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Next if you want to create your own component of type say multichoice component
 
-### Jekyll Themes
+```
+export const customMultiChoice = () : ReactElement => {
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/prateekiiest/sahay-app-toolkit/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    return(
+        <SahayFrameWork data={yourContent} themeColor={yourPreferedColor} type={componentTypes.MULTI_CHOICE_COMPONENT}/>
+        )
 
-### Support or Contact
+}
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+If you want this to be under your Navigation, simply click on [AppNavigator](https://github.com/microsoft/sahay-app-toolkit/tree/main/Sahay/src/AppNavigator) and add the corresponding scene
+
+```
+
+
+  <Scene
+    key={NavigationScenes.YOUR_MULTICHOICE_COMPONENT}
+    component={SahayFramework}
+    title="Your Component Name"
+    />
+
+```
+
+and add this in your [AppNavigator.types](https://github.com/microsoft/sahay-app-toolkit/blob/main/Sahay/src/AppNavigator/AppNavigator.types.ts)
+
+```
+
+export enum NavigationScenes {
+ YOUR_MULTICHOICE_COMPONENT = 'MultiChoiceComponentName'
+}
+
+
+```
+
+### Dependencies
+
+All Libraries used are majorly from the react-native-community umbrella and holds corresponding license information under _MIT License_.
+For a complete updated list of libraries being used, check [package.json](https://github.com/microsoft/sahay-app-toolkit/blob/main/Sahay/package.json)
+
+### Contributing
+
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
