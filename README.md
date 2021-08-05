@@ -9,7 +9,6 @@ A react-native framework that provides a suite of UI Components that can help yo
 --------------------------------
 
 ### Motivation
-
 Content based apps are prevalent in various domains ranging from fitness based apps, language learning course based applications to mental health or meditation based applications. Sahay *Hindi- meaning enabling/empowering framework* for empoweringdevelopers to build content based applications 
 
 --------------------------------
