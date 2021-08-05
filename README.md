@@ -6,9 +6,13 @@ A react-native framework that provides a suite of UI Components that can help yo
 ### [Sahay Poster](SAHAY_POSTER.pdf)
 ![](./Screenshots/Sahay_Poster.PNG)
 
+--------------------------------
+
 ### Motivation
 
 Content based apps are prevalent in various domains ranging from fitness based apps, language learning course based applications to mental health or meditation based applications. Sahay *Hindi- meaning enabling/empowering framework* for empoweringdevelopers to build content based applications 
+
+--------------------------------
 
 ### API Functionality
 
@@ -62,6 +66,8 @@ export enum NavigationScenes {
 ### [Sahay visualization Framework](microsoft.github.io/sahay-app-toolkit/customPalette.html)
 
 Along with this we also share a visualization tool for designers/developers to build app components by simple drag and drop, which can be later integrated with the app.
+
+--------------------------------
 
 
 ### Examples 
