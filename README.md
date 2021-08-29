@@ -2,19 +2,23 @@
 
 A react-native framework that provides a suite of UI Components that can help you setup any content related application.
 
-<p float="left">
-  <img src="/Screenshots/Text_Intro_Component.png" width="220" />
-  <img src="/Screenshots/Numbered_List.png" width="220" />
-  <img src="/Screenshots/Polar_Question_Component.png" width="220" /> 
-</p>
 
-*A sample application for enabling users with English speaking skills using the Sahay app framework*
+### [Sahay Poster](SAHAY_POSTER.pdf)
+![](./Screenshots/Sahay_Poster.PNG)
+
+--------------------------------
+
+### Motivation
+Content based apps are prevalent in various domains ranging from fitness based apps, language learning course based applications to mental health or meditation based applications. Sahay *Hindi- meaning enabling/empowering framework* for empoweringdevelopers to build content based applications 
+
+--------------------------------
+
+### API Functionality
+
+![](./Screenshots/API.png)
 
 
-### [Sahay visualization Framework](https://microsoft.github.io/sahay-app-toolkit/customPalette.html)
-
-
-### How to build your own App ?
+#### How to build your own App ?
 
 ```
 git clone https://github.com/microsoft/sahay-app-toolkit.git
@@ -57,6 +61,25 @@ export enum NavigationScenes {
 
 
 ```
+
+### [Sahay visualization Framework](microsoft.github.io/sahay-app-toolkit/customPalette.html)
+
+Along with this we also share a visualization tool for designers/developers to build app components by simple drag and drop, which can be later integrated with the app.
+
+--------------------------------
+
+
+### Examples 
+
+<p float="left">
+  <img src="/Screenshots/Text_Intro_Component.png" width="220" />
+  <img src="/Screenshots/Numbered_List.png" width="220" />
+  <img src="/Screenshots/Polar_Question_Component.png" width="220" /> 
+</p>
+
+*A sample application for enabling users with English speaking skills using the Sahay app framework*
+
+
 
 ### Dependencies
 
